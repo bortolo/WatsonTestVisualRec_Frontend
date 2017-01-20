@@ -1,0 +1,98 @@
+<html>
+<head>
+  <title>Login page</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/genericFunctions.js"></script>
+<script src="js/functions.js"></script>
+<script>createHead();</script>
+
+<body>
+
+	<div class = "content">
+		<h2><span class="title">IBM Visual Recognition</span></h2><br>
+		
+		<div class="row clearfix">
+		
+			<div class="column half"><h4>How good are you?</h4>
+				<div class = "post-preview">
+					<div class = "card">
+						<p>
+							This is a test framework based on ROC analysis. 
+							<br><br>
+							The aim of this work is to test IBM Watson Visual Recogntion API against different test sets.
+							<br><br>
+							Enjoy it!
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="column half"><h4>Login</h4>
+				<div class="post-preview">
+					<div class = "card">
+						<p>
+							<center><img src="img/user.png" width="100px" /><br><br>
+								<form name="login" id="login"> 
+									<b>Username or email address:</b></br>
+									<input type="text" name="userid" size="50"></br>
+									<b>Password:</b></br>
+									<input type="password" name="pswrd" size="50"></br>
+									<input type="button" value="Login" class="more" onclick="check(this.form)">
+									<input type="reset" value="Cancel" class="more">
+								</form>
+							</center><br>
+						</p>	
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	
+<center><br><br><br><font size="2">powered by </font><img src="img/bluemix.png" width="150px" align="middle" /></center>
+
+
+
+
+  <script language="javascript">
+
+	  function checkuser(filename,id,pwd){
+
+		$.ajax({														// load json file
+		  dataType: "json",
+		  url: filename,
+		  async: false,
+		  success: function(result,Status,jqXHR){
+			for(var i in result.users)
+			{
+			  var userid = result.users[i].id;
+			  var userpwd = result.users[i].pwd;
+			  console.log("*****************");
+			  console.log(userid);
+			  console.log(id);
+			  console.log("*****************");
+			if(userid == id && userpwd == pwd) return true;
+			}
+			return false;
+		  }
+		});
+
+	  }
+
+	  function check(form) { /*function to check userid & password*/
+		/*the following code checkes whether the entered userid and password are matching*/
+		//      checkuser(form.userid.value,form.pswrd.value,"json/RegisteredUsers.json");
+
+		if(checkuser("json/RegisteredUsers.json", form.userid.value,form.pswrd.value)) {
+		  window.open("home.html","_self");/*opens the target page while Id & password matches*/
+		}
+		else {
+		  alert("Error Password or Username");/*displays error message*/
+		}
+	  }
+  </script>
+
+</body>
+</html>

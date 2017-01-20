@@ -1,0 +1,303 @@
+@font-face {
+  font-family: IBM;
+  src: url('fonts/HelveticaNeue.ttf');
+  font-style: bold;
+}
+
+
+/* MOBILE SCREENS (DEFAULT) */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  background: #F6F6F6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.stage { display: none; }
+.banner-home-mob { display: block; position: relative; top: 16px; margin: 10px;
+  webkit-box-shadow: 		2px 3px 7px rgba(0,0,0,0.12);
+  -moz-box-shadow: 		2px 3px 7px rgba(0,0,0,0.12);
+  box-shadow: 				2px 3px 7px rgba(0,0,0,0.12);
+}
+.banner-home-mob > p { padding: 10px; text-align: center;}
+.banner-home-mob > h3 { padding: 10px; }
+.title-mob { display: block; }
+
+/*.categoria { color:#174286; text-align: center; font-size: 15px; margin: auto; padding: auto; font-weight: 500; }*/
+
+
+/*-------------------------------------------------------------*/
+/* GESTIONE TITOLI */
+
+h1 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 50px; color: #FFFFFF; position: fixed; top: 0; left: 1%; }
+h2 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 40px; text-transform: none; color: #00A6A0; text-align: center; position: relative; top: -20px; margin-bottom: 20px; }
+h3 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 25px; text-transform: uppercase; color: #000000; text-align: center; margin-top: 15px; margin-bottom: 10px; }
+h4 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 25px; text-transform: none; color: #000000; text-align: center; margin-top: 0px; margin-bottom: 10px; }
+h5 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 35px; text-transform: uppercase; color: #FFFFFF; text-align: center; margin-top: 20px; margin-bottom: 30px; }
+
+
+/*-------------------------------------------------------------*/
+/* GESTIONE CONTENUTI E COLONNE */
+.content {
+  position: relative; top: 30px; bottom: 60px;
+  margin: 0 auto;	max-width: 95rem; width: 100%;
+  font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; text-transform: none;
+  color: #000000;
+}
+.column { float: left; padding-left: 1rem; padding-right: 1rem; }
+.column > a { color: #494949; text-decoration: none; font-weight: bold; }
+.column > img {	float: center; width: auto; overflow: hidden; position: absolute; height: 270px; top: -30px; }
+
+.column.full { 					width: 100%; 	text-align: left; font-weight: 100; font-size: 15px; text-transform: none; }
+.column.two-thirds { 		width: 100%; 	text-align: left; }
+.column.half { 					width: 100%; 	text-align: left; }
+.column.third { 				width: 100%; 	text-align: left; }
+.column.fourth { 			  width: 100%; 	text-align: left; }
+.column.three-fourths { width: 100%;	text-align: left; }
+.column.flow-opposite { float: right; text-align: left; }
+
+.post-preview { width: 100%; padding-bottom: 30px; background-color: transparent; }
+
+.card {
+  width: 100%; heignt: auto; margin: auto; background-color: #FFFFFF;
+  font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100; font-size: 20px; text-transform: none;
+  webkit-box-shadow:  2px 3px 7px rgba(0,0,0,0.12);
+  -moz-box-shadow: 	  2px 3px 7px rgba(0,0,0,0.12);
+  box-shadow: 			  2px 3px 7px rgba(0,0,0,0.12);
+}
+.card > img { width: 100%; height: 200px; margin: auto; padding: 0; }
+.card > p { padding: 22px 15px 14px !important; }
+.card > p > img { width: 70%; height: auto; margin: auto; padding: 0; }
+.card .plot { display: none; }
+
+.more {
+  background: #174286; color: #FFFFFF;
+  padding: 10px 10px 13px; min-width: 160px; position: relative; top: 25px; margin-bottom: 35px;
+  border-radius: 3px;
+  overflow: hidden; display: inline-block;
+  font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; text-transform: none; text-align: center; text-decoration: none;
+  webkit-shadow: 		2px 3px 7px rgba(0,0,0,0.12);
+  -moz-shadow: 			2px 3px 7px rgba(0,0,0,0.12);
+  box-shadow: 			2px 3px 7px rgba(0,0,0,0.12);
+}
+.more:hover {
+  background: #1D71B8;
+  transition: ease;
+  webkit-transition: ease-in-out;
+  -moz-transition: ease-in-out;
+  transition-duration: 300ms;
+  webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  webkit-box-shadow: 		2px 8px 7px rgba(0,0,0,0.15);
+  -moz-box-shadow: 		2px 8px 7px rgba(0,0,0,0.15);
+  box-shadow: 				2px 8px 7px rgba(0,0,0,0.15);
+}
+.more-mob {
+  background: #174286; color: #FFFFFF;
+  padding: 10px 10px 13px; min-width: 160px; position: relative; top: 15px; margin-bottom: 35px;
+  border-radius: 3px;
+  overflow: hidden; display: inline-block;
+  font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; text-transform: none; text-align: center; text-decoration: none;
+  webkit-shadow: 		2px 3px 7px rgba(0,0,0,0.12);
+  -moz-shadow: 			2px 3px 7px rgba(0,0,0,0.12);
+  box-shadow: 			2px 3px 7px rgba(0,0,0,0.12);
+}
+.more-mob:hover {
+  background: #1D71B8;
+  transition: ease;
+  webkit-transition: ease-in-out;
+  -moz-transition: ease-in-out;
+  transition-duration: 300ms;
+  webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  webkit-box-shadow: 		2px 8px 7px rgba(0,0,0,0.15);
+  -moz-box-shadow: 		2px 8px 7px rgba(0,0,0,0.15);
+  box-shadow: 				2px 8px 7px rgba(0,0,0,0.15);
+}
+
+.top { /* Compare con scroll a y = 600 (scripts.php) */
+  display: none; color: #000000;
+  position: fixed; right: 5%; bottom: 5%;	margin-bottom: 35px; z-index: 500; overflow: hidden;
+  font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; text-transform: none; text-align: center;
+}
+
+.clearfix:before,
+.clearfix:after { content: " ";	display: table; }
+.clearfix:after { clear: both; }
+.clearfix {	*zoom: 1; }
+
+
+
+/* Tablet portrait */
+@media screen and (min-width: 768px) {
+
+  .column.fourth { width: 50%; display: block; }
+
+}
+
+
+/* Tablet landscape */
+@media screen and (min-width: 1024px) {
+
+  .content { width: 95%; display: block; }
+
+  .column.full { 					width: 100%; }
+  .column.two-thirds { 		width: 66.7%; }
+  .column.half { 				  width: 50%; }
+  .column.third { 				width: 33.3%; }
+  .column.fourth { 				width: 25%; display: block; }
+  .column.three-fourths { width: 75%; }
+  .column.flow-opposite { float: right; }
+
+}
+
+
+/* Desktop */
+@media all and (min-width: 1200px) {
+
+  body { min-width: 1024px; }
+  .stage { display: block; }
+  .banner-home-mob { display: none; }
+  .title-mob { display: none; }
+  .buttons-home { display: none; }
+
+  .sidebar { display: block; }
+  .top-btn.large { display: block; }
+  .top-logo.menu { display: none; }
+  .top-logo.logo { display: block; }
+
+  /*-------------------------------------------------------------*/
+  /* GESTIONE TITOLI */
+
+  h1 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 50px; color: #FFFFFF; position: fixed; top: 0; left: 19%; }
+  h2 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 35px; text-transform: none; color: #00A6A0; text-align: center; position: relative; top: 0px; margin-bottom: 30px; }
+  h3 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 35px; text-transform: none; color: #000000; text-align: center; margin-top: 0px; margin-bottom: 30px; }
+  h4 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 35px; text-transform: none; color: #000000; text-align: center; margin-top: 0px; margin-bottom: 30px; }
+  h5 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 50px; text-transform: uppercase; color: #00A6A0; text-align: center; margin-top: 20px; margin-bottom: 30px; }
+  h6 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 25px; text-transform: uppercase; color: #000000; text-align: center; margin-top: 20px; margin-bottom: 20px; }
+
+  /*-------------------------------------------------------------*/
+  /* GESTIONE CONTENUTI E COLONNE */
+  .content {
+    position: relative; top: 30px; bottom: 60px;
+    margin: 0 auto;	max-width: 95rem; width: 85%/*73.5%*/;
+    font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100;	font-size: 18px; text-transform: none;
+    color: #000000;
+  }
+
+  .column { float: left; padding-left: 1rem; padding-right: 1rem; }
+  .column > a { color: #494949; text-decoration: none; font-weight: bold; }
+  .column > img {	float: center; width: auto; overflow: hidden; position: absolute; height: 200px; top: -30px; }
+  .column > p.right { text-align: right; font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500; font-size: 25px; text-transform: none; color: #343B43; vertical-align: middle; }
+  .column.full { 					width: 100%; 	text-align: left; font-weight: 100; font-size: 15px; text-transform: none; }
+  .column.two-thirds { 		width: 66.7%; text-align: left; }
+  .column.half { 					width: 50%; 	text-align: left; }
+  .column.third { 				width: 33.3%; text-align: left; }
+  .column.fourth { 				width: 25%; 	text-align: left; display: block; }
+  .column.three-fourths { width: 75%;		text-align: left; }
+  .column.flow-opposite { float: right; text-align: left; }
+
+  .post-preview { width: 100%; padding-bottom: 30px; background-color: transparent; }
+  .post-preview > a { color: #000000; }
+
+  .card {
+    width: 95%; height: auto; margin: auto;
+    background-color: #FFFFFF;
+    font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100;	font-size: 15px; text-transform: none;
+    webkit-box-shadow: 	2px 3px 7px rgba(0,0,0,0.12);
+    -moz-box-shadow: 		2px 3px 7px rgba(0,0,0,0.12);
+    box-shadow: 				2px 3px 7px rgba(0,0,0,0.12);
+  }
+  .card > img { width: 100%; margin: auto; padding: 0; }
+  .card > p { padding: 22px 30px 14px !important; text-align: center; }
+  .card > p > img { width: 70%; height: auto; margin: auto; padding: 0; }
+  .card .ready { text-align: center; font-size: 50px; margin-bottom: -20px; }
+  .card .training { text-align: center; font-size: 50px; margin-bottom: -20px; }
+  .card .free { text-align: center; font-size: 50px; margin-bottom: -20px; }
+  .card .result { text-align: center; font-size: 50px; margin-bottom: -20px; }
+
+  .more {
+    background: #343B43; color: #FFFFFF;
+    padding: 10px 10px 13px; min-width: 100px; position: relative; top: 15px; margin-bottom: 15px;
+    border-radius: 3px;
+    overflow: hidden; display: inline-block;
+    font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; text-transform: none; text-align: center; text-decoration: none;
+    webkit-shadow: 		2px 3px 7px rgba(0,0,0,0.12);
+    -moz-shadow: 			2px 3px 7px rgba(0,0,0,0.12);
+    box-shadow: 			2px 3px 7px rgba(0,0,0,0.12);
+    cursor: pointer;
+  }
+  .more.del { background: #343B43; color: #FFFFFF; }
+  .more-mob { display: none; }
+  .more:hover {
+    background: #00A6A0;
+    transition: ease;
+    webkit-transition: ease-in-out;
+    -moz-transition: ease-in-out;
+    transition-duration: 300ms;
+    webkit-transition-duration: 300ms;
+    -moz-transition-duration: 300ms;
+    webkit-box-shadow: 		2px 8px 7px rgba(0,0,0,0.15);
+    -moz-box-shadow: 		2px 8px 7px rgba(0,0,0,0.15);
+    box-shadow: 				2px 8px 7px rgba(0,0,0,0.15);
+  }
+/*
+  .top {
+    display: none; color: #000000;
+    position: fixed; right: 5%; bottom: 5%;	margin-bottom: 35px; z-index: 500; overflow: hidden;
+    font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 100; font-size: 18px; text-transform: none; text-align: center;
+  }
+*/
+  .clearfix:before,
+  .clearfix:after { content: " ";	display: table; }
+  .clearfix:after { clear: both; }
+  .clearfix {	*zoom: 1; }
+
+  /* Table and cell elements (block) */
+  table, td, th { border: 1px solid #ddd; text-align: left; }
+  table { border-collapse: collapse; width: 90%; }
+  th, td { padding: 10px; }
+  .block { width: 100%; height: 50px; border: solid 1px #ddd; margin-top: 10px; margin-bottom: 10px; }
+  .block > a { padding: 5px; }
+
+  #drop_zone { /* zone in which you can drop files to upload */
+    border: dashed 2px #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px;
+  }
+
+  #addmore_zone { /* dashed indicator of new lines addable */
+    border: dashed 2px #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    color: #343B43;
+  }
+
+  #loading { /* logo watson loading */
+    width: 150px;
+    height: auto;
+    position: relative;
+    filter: contrast(93.3%); /* per fare in modo che il bianco di sfondo diventi il grigio della pagina! */
+  }
+  #start { display: none; }
+
+  #graph1, #graph2 {
+      z-index: 10000;
+      webkit-box-shadow: 	2px 3px 7px rgba(0,0,0,0.12);
+      -moz-box-shadow: 		2px 3px 7px rgba(0,0,0,0.12);
+      box-shadow: 				2px 3px 7px rgba(0,0,0,0.12);}
+}

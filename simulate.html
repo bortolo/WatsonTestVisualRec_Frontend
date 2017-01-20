@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/menuButton.js"></script><!-- Mostra bottone menu -->
+<script type="text/javascript" src="javascript/menuDisplay.js"></script><!-- Mostra menu -->
+<script src="js/genericFunctions.js"></script>
+<script src="js/functions.js"></script>
+<script>createHead();</script>
+
+
+<script>
+// MULTIPLY SELECTORS
+var i = 1;
+var max = 10; // max number of allowed selectors: 10
+
+$(document).ready(function(){
+  $("#addmore").click(function(){
+    if(i < max){
+      var $div = $('div[id^="moltiplicandum"]:last'); // seleziono l'ultimo moltiplicandum
+      var num = parseInt( $div.prop("id").match(/\d+/g), 10 ) +1; // estraggo il numero identificativo e lo incremento
+      $("#moltiplicandum1").clone().prop('id', 'moltiplicandum'+num ).appendTo("#sim_list"); // clono, rinomino e appendo
+    } else {
+      alert("Max number of entries reached.");
+    }
+    i++;
+  });
+});
+</script>
+
+
+<body>
+  <header></header>
+  <script>createHeader();</script>
+
+
+  <div class="content">
+    <br><br><br>
+    <!--<h2><span class="title">Watson Visual Recognition ROC Test</span></h2>-->
+    <br>
+    <div class="row clearfix">
+
+      <div class="column fourth">
+
+        <div class="post-preview"><h2>Simulate</h2>
+          <div class="card">
+            <p>
+              Here you can select up to 10 scenarios to perform a ROC analysis on available classifiers. Just select the test set, the cathegory you want to explore and the VR classifier. <br>Or, you may upload your own classifier to use to perform the ROC test.<br><br>When ready, just click on Start simulation.
+            </p>
+          </div>
+        </div>
+
+        <div class="post-preview">
+          <div>
+            <p>
+              <center>
+                <div id="drop_zone">Drop files here</div>
+                <output id="list"></output>
+                <div class="more" title="Upload"><img src="ico/upload_32.png" style="filter: invert(100%);" width="20px;"></div>
+                <div class="more" title="Browse"><img src="ico/search_32.png" style="filter: invert(100%);" width="20px;"></div>
+              </center>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="column three-fourths">
+
+        <div id="sim_list">
+
+          <div class="row clearfix">
+            <div class="column third"><h4>Test set</h4></div>
+            <div class="column third"><h4>Cathegory</h4></div>
+            <div class="column third"><h4>Classifier</h4></div>
+          </div>
+
+          <div class="row clearfix moltiplicandum" id="moltiplicandum1">
+
+            <div class="column third">
+              <select class="test_set" type="text" style="width:100%">
+                <option selected disabled value="">Select...</option>
+              </select>
+            </div>
+
+            <div class="column third">
+              <select class="avail_cat" type="text" style="width:100%">
+                <option selected disabled value="">Select...</option>
+              </select>
+            </div>
+
+            <div class="column third">
+              <select class="avail_class" type="text" style="width:100%">
+                <option selected disabled value="">Select...</option>
+              </select>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="row clearfix">
+
+          <div class="column third">
+            <div id="addmore_zone">add clicking on <img src="ico/add-new_32.png" width="15px;"></div>
+          </div>
+          <div class="column third">
+            <div id="addmore_zone">add clicking on <img src="ico/add-new_32.png" width="15px;"></div>
+          </div>
+          <div class="column third">
+            <div id="addmore_zone">add clicking on <img src="ico/add-new_32.png" width="15px;"></div>
+          </div>
+
+        </div>
+
+        <br>
+
+        <center id="sim-buttons">
+          <div id="addmore" class="more" title="Add test"><img src="ico/add-new_32.png" style="filter: invert(100%);" width="20px;"></div>
+          <div class="more" onclick="refreshPage()" title="Cancel"><img src="ico/revert_32.png" style="filter: invert(100%);" width="20px;"></div>
+          <div class="more" onclick="retrieveSimConfig()" title="Start simulation"><img src="ico/play_32.png" style="filter: invert(100%);" width="20px;"></div>
+        </center>
+
+        <center><div id="start"></div></center>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<script>
+
+// DROP ZONE (after the drop_zone and output divs, outside functions.js)
+function handleFileSelect(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+
+  var files = evt.dataTransfer.files; // FileList object.
+
+  // files is a FileList of File objects. List some properties.
+  var output = [];
+  for (var i = 0, f; f = files[i]; i++) {
+    output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+    f.size, ' bytes, last modified: ',
+    f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+    '</li>');
+  }
+  document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+}
+
+function handleDragOver(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+}
+
+// Setup the dnd listeners.
+var dropZone = document.getElementById('drop_zone');
+dropZone.addEventListener('dragover', handleDragOver, false);
+dropZone.addEventListener('drop', handleFileSelect, false);
+
+</script>
+
+
+<script>
+populateSelectSim("json/frontend.json");
+</script>
+
+</html>

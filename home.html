@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/menuButton.js"></script><!-- Mostra bottone menu -->
+<script type="text/javascript" src="javascript/menuDisplay.js"></script><!-- Mostra menu -->
+<script src="js/genericFunctions.js"></script>
+<script src="js/functions.js"></script>
+<script>createHead();</script>
+
+
+<body>
+<header></header><script>createHeader();</script>
+
+
+  <div class="content">
+<br><br><br>
+    <!--<h2><span class="title">Watson Visual Recognition ROC Test</span></h2>-->
+<br>
+
+
+    <div class="row clearfix">
+
+      <div class="column fourth"><h2>Overview</h2>
+
+        <div class="post-preview">
+          <div class="card">
+            <p class="ready"></p>
+            <p>ready classificators</p>
+          </div>
+        </div>
+
+        <div class="post-preview">
+          <div class="card">
+            <p class="free"></p>
+            <p>free classificators</p>
+          </div>
+        </div>
+
+        <div class="post-preview">
+          <div class="card">
+            <p class="training"></p>
+            <p>classificators in training</p>
+          </div>
+        </div>
+
+        <div class="post-preview">
+            <p>
+				<center>
+					<div class="more" title="Simulate"><img src="ico/play_32.png" style="filter: invert(100%);" width="20px;"></div>
+					<div class="more" title="Train classifier"><img src="ico/create-new_32.png" style="filter: invert(100%);" width="20px;"></div>
+				</center>
+            </p>
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <div class="column three-fourths">
+
+        <div class="post-preview"><h4>Classifier map</h4>
+          <div class="card">
+            <p>
+              <center><div id="dvTable" style="overflow-y:scroll; overflow-x:hidden; height:500px;"></div></center>
+            </p>
+          </div>
+        </div>
+
+        <div class="post-preview"><h4>Training dataset available</h4>
+          <div class="card">
+            <p>
+              <center><div id="dvList"></div></center>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</body>
+
+<script>
+	generateNumbers("json/frontend.json");
+	generateTable("json/frontend.json"); //you can test with table.json
+	generateList("json/frontend.json");
+</script>
+
+</html>

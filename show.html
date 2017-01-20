@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src ="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="javascript/menuButton.js"></script><!-- Mostra bottone menu -->
+<script type="text/javascript" src="javascript/menuDisplay.js"></script><!-- Mostra menu -->
+<script src="js/genericFunctions.js"></script>
+<script src="js/functions.js"></script>
+<script>createHead();</script>
+
+
+<body>
+	<header></header><script>createHeader();</script>
+
+
+
+	<div class="content">
+		<br><br><br>
+
+		<!-- PARTE ALTA DELLA PAGINE (VALORI E IMMAGINI) -->
+		<div class="row clearfix">
+			<!-- PARTE SINISTRA (VALORI E SELEZIONE TEST) -->
+			<div class="column third"><h2>Results</h2>
+				<!-- Riga con i valori select dei test -->
+				<div class="row clearfix">
+					<div class="column full">
+						<select class="show_test" type="text" style="width:100%">
+							<option selected>Select Test Set to be analyzed...</option>
+						</select>
+					</div>
+				</div>
+				<!--                   -->
+				<br>
+				<!-- Riga con i valori di ACCURACY e THRESHOLD -->
+				<div class="row clearfix">
+					<div class="column half">
+						<div class="post-preview" style="width:100%; height:auto">
+							<div class="card" style="width:100%; height:auto" id=accuracy>
+							</div>
+						</div>
+					</div>
+					<div class="column half">
+						<div class="post-preview" style="width:100%; height:auto">
+							<div class="card" style="width:100%; height:auto" id=threshold>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- PARTE DESTRA (IMMAGINI) -->
+			<div class="column two-thirds"><h2></h2><br>
+<!-- RIGA FALSI POSITIVI -->
+				<div class="row clearfix">
+					<div class="column fourth" id=captionFP>
+					</div>
+					<div class="column three-fourths">
+						<div class="post-preview" id="falsepositive">
+						</div>
+					</div>
+				</div>
+<!-- RIGA FALSINEGATIVI -->
+				<div class="row clearfix">
+					<div class="column fourth" id=captionFN>
+					</div>
+					<div class="column three-fourths">
+						<div class="post-preview" id="falsenegative">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PARTE BASSA DELLA PAGINA (GRAFICI) -->
+		<div class="row clearfix">
+			<!-- PRIMO GRAFICO PARTE SINISTRA -->
+			<div class="column half">
+				<div class="post-preview">
+					<h3><span class="title"></span></h3>
+					<div id="graph1" style="width: 100%; height: auto;"></div>
+				</div>
+			</div>
+			<!-- SECONDO GRAFICO PARTE DESTRA -->
+			<div class="column half">
+				<div class="post-preview">
+					<h3><span class="title"></span></h3>
+					<div id="graph2" style="width: 100%; height: auto;"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- gestione della preview immagini -->
+
+		<div id="myModal" class="modal">
+			<span class="close cursor" onclick="closeModal()">&times;</span>
+			<div class="modal-content" id="modalcontent">
+			</div>
+		</div>
+
+	</body>
+
+	<script>
+	Draw("json/frontend.json");
+	addimages("json/frontend.json");
+	populateSelectSim("json/frontend.json");
+	</script>
+
+	<script>
+	$(".show_test").change(function(){addimages("json/frontend.json");});
+	</script>
+
+</html>

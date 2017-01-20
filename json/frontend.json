@@ -1,0 +1,52 @@
+{
+	"classifiers": [
+		{"ID": "yyxxxxxxx", "label": "Watch", "trainingSize": 100, "status": "ready"},
+		{"ID": "yyyyyyyyy", "label": "Watch", "trainingSize": 1000, "status": "ready"},
+		{"ID": "xxxxxxxxx", "label": "Helicopter", "trainingSize": 300, "status": "ready"},
+		{"ID": "xxxxxxxxx", "label": "Mushroom", "trainingSize": 300, "status": "ready"},
+		{"ID": "xxxxxxxxx", "label": "Watch", "trainingSize": 100, "status": "training"},
+		{"ID": "xxxxxxxxx", "label": "Plane", "trainingSize": 500, "status": "ready"},
+		{"ID": "yxxxxxxxx", "label": "Tree", "trainingSize": 1500, "status": "ready"},
+		{"ID": "xxxxxxxxx", "label": "Flower", "trainingSize": 2000, "status": "training"},
+		{"ID": "xxxxxxxxx", "label": "Flower", "trainingSize": 2000, "status": "training"}
+	],
+	"VRinstances": [
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 1, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 0, "owner_name": "Andrea", "owner_surname": "Bortolossi"},
+		{"apikey": "xxxxxxxxx", "customclassifier": 0, "owner_name": "Andrea", "owner_surname": "Bortolossi"}
+	],
+	"trainingDatasets": [
+		{"ID": "xxxxxxxxx", "label": "Watch", "size": 1000},
+		{"ID": "xxxxxxxxx", "label": "Helicopter", "size": 400},
+		{"ID": "xxxxxxxxx", "label": "Mushroom", "size": 1200},
+		{"ID": "xxxxxxxxx", "label": "Horse", "size": 500},
+		{"ID": "xxxxxxxxx", "label": "Plane", "size": 2500},
+		{"ID": "xxxxxxxxx", "label": "Tree", "size": 3000},
+		{"ID": "xxxxxxxxx", "label": "Flower", "size": 1000}
+	],
+	"testSets": [
+		{"ID": "xyxxxxxxx", "label": "Watch", "size": 100, "status": "ready"},
+		{"ID": "xzxxxxxxx", "label": "Watch", "size": 50, "status": "ready"},
+		{"ID": "xxxxxxxxx", "label": "Watch", "size": 20, "status": "none"},
+		{"ID": "xxxxxxxxx", "label": "Horse", "size": 40, "status": "ready"},
+		{"ID": "xxxxxxxxx", "label": "Horse", "size": 50, "status": "ready"},
+		{"ID": "xkxxxxxxx", "label": "Tree", "size": 30, "status": "ready"},
+		{"ID": "xxxxxxxxx", "label": "Flower", "size": 100, "status": "ready"}
+	],
+	"tests":[
+		{"ID":"test1","accuracy": 0.87,"fpr":[0, 0.2, 0.4, 1],"tpr":[0, 0.4, 0.7, 1],"AUC":0.67,"trainingSize": 50, "threshold":0.2,"falsepositive":["img/img_nature_wide.jpg","img/img_fjords_wide.jpg"],"falsenegative":["img/img_mountains_wide.jpg","img/img_lights_wide.jpg"]},
+		{"ID":"test2","accuracy": 0.57,"fpr":[0, 0.3, 0.5, 1],"tpr":[0, 0.4, 0.7, 1],"AUC":0.57, "trainingSize": 150,"threshold":0.4,"falsepositive":["img/408757582443373.jpg","img/6471154175007223.jpg","img/img_nature_wide.jpg","img/img_fjords_wide.jpg"],"falsenegative":["img/7169059395095464.jpg","img/8119543326477369.jpg","img/8433457349861016.jpg","img/img_nature_wide.jpg","img/img_fjords_wide.jpg"]},
+		{"ID":"test3","accuracy": 0.67,"fpr":[0, 0.1, 0.8, 1],"tpr":[0, 0.4, 0.7, 1],"AUC":0.77, "trainingSize": 250,"threshold":0.5,"falsepositive":["img/img_nature_wide.jpg","img/img_fjords_wide.jpg"],"falsenegative":["img/img_mountains_wide.jpg","img/img_lights_wide.jpg"]},
+		{"ID":"test4","accuracy": 0.89,"fpr":[0, 0.4, 0.6, 1],"tpr":[0, 0.4, 0.7, 1],"AUC":0.97, "trainingSize": 350, "threshold":0.54,"falsepositive":["img/img_nature_wide.jpg","img/img_fjords_wide.jpg"],"falsenegative":["img/img_mountains_wide.jpg","img/img_lights_wide.jpg"]},
+		{"ID":"test5","accuracy": 0.99,"fpr":[0, 0.6, 0.8, 1],"tpr":[0, 0.4, 0.7, 1],"AUC":0.999, "trainingSize": 550, "threshold":0.99,"falsepositive":["img/img_nature_wide.jpg","img/img_fjords_wide.jpg"],"falsenegative":["img/img_mountains_wide.jpg","img/img_lights_wide.jpg","img/408757582443373.jpg","img/6471154175007223.jpg"]}
+]
+}
