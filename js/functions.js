@@ -447,11 +447,16 @@ function generateTable(filename) {
 			return el.value;
 		}));
 
+		JSON.stringify(selectArray);
+
+		window.location = "show.html?arr="+selectArray;
+
+/*
 		//console.log(selectArray);
 		document.getElementById("sim-buttons").style.display = "none"; // after clicking, hide buttons
 		document.getElementById("start").style.display = "block"; // after clicking, display watson logo
 		$('#start').html("<img src='ico/loading-indicator.gif' id='loading'>");
-
+*/
 		// Send a http request with AJAX to retrieve contents from backend
 		/*$.ajax(
 		{
