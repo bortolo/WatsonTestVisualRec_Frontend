@@ -293,7 +293,13 @@ h5 { font-family: "museo-sans",sans-serif; font-style: normal; font-weight: 500;
     position: relative;
     filter: contrast(93.3%); /* per fare in modo che il bianco di sfondo diventi il grigio della pagina! */
   }
-  #start { display: none; }
+  #start {
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 45.1%;
+    z-index: 10000;
+  }
 
   #graph1, #graph2 {
       z-index: 10000;

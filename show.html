@@ -16,10 +16,19 @@
 <body>
 	<header></header><script>createHeader();</script>
 
-
+	<script>
+	$.urlParam = function(name){
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		return results[1] || 0;
+	}
+	var array = $.urlParam('arr');
+	</script>
 
 	<div class="content">
 		<br><br><br>
+
+		<!-- Icona Watson -->
+		<center><div id="start"></div></center>
 
 		<!-- PARTE ALTA DELLA PAGINE (VALORI E IMMAGINI) -->
 		<div class="row clearfix">
@@ -103,6 +112,7 @@
 	</body>
 
 	<script>
+	getDataShow(array);
 	Draw("json/frontend.json");
 	addimages("json/frontend.json");
 	populateSelectSim("json/frontend.json");

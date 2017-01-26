@@ -1,11 +1,8 @@
-
-
 // READ FILENAME FROM BROWSE FILE show (will be deprecated)
 function retrieveData(){
 	var nomefile = "json/"+$("#dataset").val(); 	// retrieve filename
 	Draw(nomefile);											// call Draw function
 }
-
 
 // RESET BROWSE FILE show (will be deprecated)
 function clearData(){
@@ -19,7 +16,6 @@ function clearData(){
 		focus: function(){ console.log("Focus") }
 	});
 }
-
 
 // CREATE GRAPH show
 function Draw(nomefile){
@@ -171,7 +167,7 @@ function Draw(nomefile){
 		Plotly.newPlot('graph1', ROCcurves, layout1);
 		Plotly.newPlot('graph2', AUCcurves, layout2);
 	}
-});
+	});
 }
 
 //append images from json files
@@ -292,6 +288,7 @@ function showSlides(n) {
 	captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
+
 // generate table of classifier available (home)
 function generateTable(filename) {
 	$.ajax(
@@ -355,12 +352,10 @@ function generateTable(filename) {
 				addTable("dvTable",print_table);
 			} //end of function
 		}); //end of ajax call
-	} //end of generateTable
+} //end of generateTable
 
-
-
-	// UTILITY - add a table to a div element (home)
-	function addTable(IDelement,table){
+// UTILITY - add a table to a div element (home)
+function addTable(IDelement,table){
 		//Create a HTML Table element.
 		var tableElement = document.createElement("TABLE");
 		var columnCount = table[0].length;
@@ -378,10 +373,8 @@ function generateTable(filename) {
 		dvTable.appendChild(tableElement);
 	}
 
-
-
-	// generate list of training datasets (home)
-	function generateList(filename) {
+// generate list of training datasets (home)
+function generateList(filename) {
 		$.ajax(
 			{
 				//url: '',  //path al servizio di Marco
@@ -407,8 +400,8 @@ function generateTable(filename) {
 		);
 	}
 
-	// (home)
-	function generateNumbers(filename){
+// (home)
+function generateNumbers(filename){
 		$.ajax({														// load json file
 			dataType: "json",
 			url: filename,
@@ -438,25 +431,25 @@ function generateTable(filename) {
 	}
 
 
+// READ SIMULATION CONFIGURATION simulation
+function retrieveSimConfig(){
 
+	selectArray = Array.prototype.map.call($(".moltiplicandum select"),(function(el){
+		return el.value;
+	}));
 
-	// READ SIMULATION CONFIGURATION simulation
-	function retrieveSimConfig(){
+	JSON.stringify(selectArray);
+	window.location = "show.html?arr="+selectArray;
 
-		selectArray = Array.prototype.map.call($(".moltiplicandum select"),(function(el){
-			return el.value;
-		}));
+		//document.getElementById("sim-buttons").style.display = "none"; // after clicking, hide buttons
+		//document.getElementById("start").style.display = "block"; // after clicking, display watson logo
 
-		JSON.stringify(selectArray);
-
-		window.location = "show.html?arr="+selectArray;
-
-/*
+		/*
 		//console.log(selectArray);
 		document.getElementById("sim-buttons").style.display = "none"; // after clicking, hide buttons
 		document.getElementById("start").style.display = "block"; // after clicking, display watson logo
 		$('#start').html("<img src='ico/loading-indicator.gif' id='loading'>");
-*/
+		*/
 		// Send a http request with AJAX to retrieve contents from backend
 		/*$.ajax(
 		{
@@ -470,11 +463,32 @@ function generateTable(filename) {
 	}
 });*/
 
+}
 
+// GET DATA TO SHOW
+function getDataShow(dataArray){
+
+	//alert(dataArray);
+	document.getElementById("start").style.display = "block";
+	$('#start').html("<img src='ico/load.svg' id='loading'>");
+
+/*
+	$.ajax(
+	{
+		url: '',
+		type: 'POST',
+		data:{ array: dataArray },
+		dataType: 'json',
+		success: function(result)
+		{
+
+		}
+	});
+*/
 }
 
 
-// simulation
+// POPULATE SIMULATION DROP DOWN MENUS
 function populateSelectSim(filename){
 
 	$.ajax({														// load json file
